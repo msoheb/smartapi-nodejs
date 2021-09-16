@@ -1,12 +1,15 @@
-const fastify = require("fastify")({ logger: true });
+const fastify = require('fastify')({ logger: true })
 
-require("dotenv").config();
+require('dotenv').config()
 
-const port = process.env.PORT;
+fastify.register(require('fastify-cors'))
+fastify.register(require('./routes/authenticate'))
 
-(async () => {
-  await fastify.listen(port);
-})().catch((err) => {
-  fastify.log.error(err);
-  process.exit(1);
-});
+const port = process.env.PORT
+
+;(async () => {
+  await fastify.listen(port)
+})().catch(err => {
+  fastify.log.error(err)
+  process.exit(1)
+})
