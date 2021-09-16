@@ -4,6 +4,7 @@ require('dotenv').config()
 
 fastify.register(require('fastify-cors'))
 fastify.register(require('./routes/authenticate'))
+fastify.register(require('./routes/profile'))
 
 const port = process.env.PORT
 

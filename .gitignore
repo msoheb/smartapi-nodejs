@@ -2,3 +2,7 @@ node_modules/
 
 # Env File
 .env
+
+
+# Rest Client file
+rest.http
